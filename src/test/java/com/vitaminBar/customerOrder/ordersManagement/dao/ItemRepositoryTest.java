@@ -1,6 +1,5 @@
-package customerOrder.ordersManagement.dao;
+package com.vitaminBar.customerOrder.ordersManagement.dao;
 
-import com.vitaminBar.customerOrder.ordersManagement.dao.ItemRepository;
 import com.vitaminBar.customerOrder.ordersManagement.model.Item;
 import com.vitaminBar.customerOrder.ordersManagement.model.Order;
 import org.junit.jupiter.api.BeforeEach;

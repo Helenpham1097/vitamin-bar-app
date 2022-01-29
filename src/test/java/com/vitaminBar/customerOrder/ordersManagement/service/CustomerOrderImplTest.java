@@ -1,11 +1,10 @@
-package customerOrder.ordersManagement.service;
+package com.vitaminBar.customerOrder.ordersManagement.service;
 
 import com.vitaminBar.customerOrder.menuManagement.dao.TypeInformationRepository;
 import com.vitaminBar.customerOrder.menuManagement.model.Menu;
 import com.vitaminBar.customerOrder.menuManagement.model.TypeInformation;
 import com.vitaminBar.customerOrder.ordersManagement.dto.CompletedOrderDto;
 import com.vitaminBar.customerOrder.ordersManagement.model.*;
-import com.vitaminBar.customerOrder.ordersManagement.service.CustomerOrderImpl;
 import com.vitaminBar.customerOrder.menuManagement.dto.TypeInformationDto;
 import com.vitaminBar.customerOrder.ordersManagement.dao.CustomerRepository;
 import com.vitaminBar.customerOrder.ordersManagement.dao.ItemRepository;

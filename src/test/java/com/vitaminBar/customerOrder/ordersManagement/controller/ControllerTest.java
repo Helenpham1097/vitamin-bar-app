@@ -8,7 +8,7 @@ import com.vitaminBar.customerOrder.ordersManagement.dto.CompletedOrderDto;
 import com.vitaminBar.customerOrder.ordersManagement.dto.CustomerDto;
 import com.vitaminBar.customerOrder.ordersManagement.dto.OrderDto;
 import com.vitaminBar.customerOrder.ordersManagement.service.CustomerOrderService;
-import customerOrder.ordersManagement.service.ItemChanges;
+import com.vitaminBar.customerOrder.ordersManagement.service.ItemChanges;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
