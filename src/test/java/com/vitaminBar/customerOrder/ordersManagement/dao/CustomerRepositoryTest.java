@@ -1,6 +1,5 @@
-package customerOrder.ordersManagement.dao;
+package com.vitaminBar.customerOrder.ordersManagement.dao;
 
-import com.vitaminBar.customerOrder.ordersManagement.dao.CustomerRepository;
 import com.vitaminBar.customerOrder.ordersManagement.model.Customer;
 import com.vitaminBar.customerOrder.ordersManagement.model.Order;
 import com.vitaminBar.customerOrder.ordersManagement.model.CompletedOrder;
