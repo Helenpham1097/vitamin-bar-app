@@ -79,12 +79,15 @@ public class CustomerOrderImpl implements CustomerOrderService {
 
     @Transactional
     public void getNewOrder(String customerPhone, CustomerDto customerInfo, OrderDto orderDto, Set<CartItemsDto> itemDtos) {
+        System.out.println(customerPhone);
         Customer foundCustomer = customerRepository.getCustomerByPhone(customerPhone);
+
         if (foundCustomer == null) {
             foundCustomer = toCustomer(customerInfo);
             customerRepository.save(foundCustomer);
         }
         Order order = toOrder(orderDto);
+
         foundCustomer.addOrder(order);
         Set<Item> items = itemDtos
                 .stream()
@@ -272,6 +275,7 @@ public class CustomerOrderImpl implements CustomerOrderService {
         newItem.setItemName(dto.getItemName());
         newItem.setQuantity(dto.getQuantity());
         newItem.setPrice(dto.getPrice());
+
         return newItem;
     }
 

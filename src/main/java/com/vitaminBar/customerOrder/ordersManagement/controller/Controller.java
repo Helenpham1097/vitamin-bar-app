@@ -9,6 +9,7 @@ import com.vitaminBar.customerOrder.ordersManagement.dto.CustomerDto;
 import com.vitaminBar.customerOrder.ordersManagement.dto.OrderDto;
 import com.vitaminBar.customerOrder.ordersManagement.service.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,10 @@ public class Controller {
 
     private final CustomerOrderService customerOrder;
 
+//    @RequestMapping("/")
+//    public String home(){
+//        return "Hello World!";
+//    }
     @Autowired
     public Controller(CustomerOrderService customerOrder){
         this.customerOrder = customerOrder;
@@ -30,8 +35,14 @@ public class Controller {
     public ResponseEntity<String> insertNewOrder(@RequestBody OrderRequest request){
         customerOrder.getNewOrder(request.getPhone(),request.getCustomer(),
                 request.getOrder(),request.getItems());
-        return ResponseEntity.ok("added");
+        return ResponseEntity.ok("Thank you for shopping with us");
     }
+//    @PostMapping(path = "/add", consumes = {MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+//    public ResponseEntity<String> insertNewOrder( OrderRequest request){
+//        customerOrder.getNewOrder(request.getPhone(),request.getCustomer(),
+//                request.getOrder(),request.getItems());
+//        return ResponseEntity.ok("added");
+//    }
     @GetMapping("/customers")
     public List<CustomerDto> getAllCustomer(){
         return customerOrder.getAllCustomersInformation();
