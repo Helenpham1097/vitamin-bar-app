@@ -53,6 +53,18 @@ public class ServiceMenuImpl implements ServiceMenu {
     }
 
     @Transactional
+    public List<String> getAllMainBeveragesName(){
+        List<Menu> menus = menuRepository.findAll();
+        if(menus == null){
+            throw new MenuNotFoundException("No beverages are available");
+        }
+        return menus
+                .stream()
+                .map(Menu::getTypeName)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
     public List<MenuDto> getAllBeverages() {
         List<Menu> menu = menuRepository.findAll();
         if(menu==null){
@@ -123,7 +135,7 @@ public class ServiceMenuImpl implements ServiceMenu {
     public void deleteABeverageWithAllItems(String typename) throws MenuNotFoundException{
         Menu menu = menuRepository.fetchByTypeName(typename);
         if(menu == null){
-            throw new MenuNotFoundException("Menu "+ menu.getTypeName()+" is not available");
+            throw new MenuNotFoundException("Menu "+ typename+" is not available");
         }
         typeInformationRepository.deleteByBeverageId(menu.getId());
         menuRepository.deleteByTypeName(typename);
