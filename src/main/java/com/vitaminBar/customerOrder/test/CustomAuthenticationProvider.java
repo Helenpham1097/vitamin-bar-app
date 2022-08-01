@@ -23,9 +23,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        // empty user name handler
 
-        System.out.println(authentication.toString());
         final String username = (authentication.getPrincipal() == null) ? "NONE_PROVIDED" : authentication.getName();
 
         if (username.isEmpty()) {
@@ -43,12 +41,13 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         boolean checkedPassword = passwordEncoder.matches((CharSequence) authentication.getCredentials(), user.getPassword());
 
         if (checkedPassword && user.isAccountNonLocked() || checkedPassword && service.unlockedWhenTimeExpired(user)) {
-            if(user.getFailedAttempts()>0) {
+
+            if (user.getFailedAttempts() > 0) {
                 service.resetFailedAttempt(user);
             }
             return createSuccessfulAuthentication(authentication, user);
-        }
-        else {
+
+        } else {
             throw new BadCredentialsException("invalid login details");
         }
     }

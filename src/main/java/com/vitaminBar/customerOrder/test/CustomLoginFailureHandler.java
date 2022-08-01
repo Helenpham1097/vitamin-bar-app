@@ -22,11 +22,6 @@ public class CustomLoginFailureHandler extends SimpleUrlAuthenticationFailureHan
     @Resource
     PasswordEncoder passwordEncoder;
 
-//    @Autowired
-//    public CustomLoginFailureHandler(SecurityUserDetailsService userDetailsService){
-//        this.userDetailsService = userDetailsService;
-//    }
-
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest,
                                         HttpServletResponse httpServletResponse,
