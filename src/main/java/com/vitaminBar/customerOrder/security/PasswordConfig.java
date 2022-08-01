@@ -1,4 +1,4 @@
-package com.vitaminBar.customerOrder.test;
+package com.vitaminBar.customerOrder.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

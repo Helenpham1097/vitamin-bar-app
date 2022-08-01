@@ -1,4 +1,4 @@
-package com.vitaminBar.customerOrder.test;
+package com.vitaminBar.customerOrder.security;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
