@@ -4,6 +4,6 @@ This is an online vitamin beverage store that aims to help customers to explore 
 ## Software Architecture
 
 
-##Future works
+## Future works
  - add payment method for customer
  - create their own page with customer information to track history order, coupon, saving points
