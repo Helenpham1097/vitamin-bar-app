@@ -1,0 +1,25 @@
+package com.vitaminBar.customerOrder;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
+
+@Component
+class BeanViewer {
+
+    private final Logger LOG = LoggerFactory.getLogger(getClass());
+
+    @EventListener
+    public void showBeansRegistered(ApplicationReadyEvent event) {
+        String[] beanNames = event.getApplicationContext()
+                .getBeanDefinitionNames();
+
+        System.out.println("loading beans...");
+        for (String beanName : beanNames) {
+//            if (beanName.contains("com.vitaminBar.customerOrder"))
+//                LOG.info("{}", beanName);
+        }
+    }
+}
