@@ -2,7 +2,7 @@
 This is an online vitamin beverage store that aims to help customers to explore the menu of the store and make orders
 
 ## Software Architecture
-
+Thayhayaaj
 
 ## Future works
  - add payment method for customer
